@@ -542,7 +542,7 @@ footer{padding:var(--s-8) 0 var(--s-6); font-size:15.6px; color:var(--stone); ba
 #quiz .btn,#quiz .btn:hover,#quiz .btn:focus-visible{color:#fff!important;}
 #quiz .quiz-opt{color:#202124!important;}
 </style>
-<style id="strict-monochrome-theme">
+<!-- Disabled conflicting monochrome theme:
 /* Строгая монохромная палитра: чёрный, белый, графит */
 :root{
   --sand:#FFFFFF;
@@ -589,7 +589,7 @@ footer{padding:var(--s-8) 0 var(--s-6); font-size:15.6px; color:var(--stone); ba
 a:focus-visible,:focus-visible{outline-color:#55595F!important;}
 .btn-pulse{animation:none!important;box-shadow:none!important;}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
-</style>
+ -->
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -881,79 +881,47 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 </script>
 
 
-<style id="mobile-max-cta-styles">
-@media (max-width: 767px) {
-  .mobile-call-desktop-original { display: none !important; }
-  .mobile-max-button {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    gap: .45rem;
-    text-decoration: none !important;
-  }
+<style id="header-contact-buttons">
+.header-contact-buttons{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
 }
-@media (min-width: 768px) {
-  .mobile-max-button { display: none !important; }
+.header-contact-buttons .header-max-btn{
+  background:#1E5EFF !important;
+  border-color:#1E5EFF !important;
+  color:#fff !important;
+  text-decoration:none !important;
+}
+.header-contact-buttons .header-phone-btn{
+  background:transparent !important;
+  border:1px solid #111 !important;
+  color:#111 !important;
+  text-decoration:none !important;
+  white-space:nowrap;
+}
+.header-contact-buttons .header-phone-btn:hover,
+.header-contact-buttons .header-phone-btn:focus-visible{
+  background:#111 !important;
+  color:#fff !important;
+}
+@media (max-width: 767px){
+  .header-contact-buttons{width:100%; gap:8px;}
+  .header-contact-buttons .btn{flex:1 1 0; min-width:0;}
 }
 </style>
 
 
 <style id="photo-lightbox-styles">
-.photo-clickable {
-  cursor: zoom-in !important;
-}
-.photo-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: rgba(0,0,0,.88);
-}
-.photo-lightbox.open {
-  display: flex;
-}
-.photo-lightbox img {
-  display: block;
-  max-width: min(96vw, 1400px);
-  max-height: 90vh;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 10px;
-  cursor: zoom-out;
-  box-shadow: 0 20px 80px rgba(0,0,0,.45);
-}
-.photo-lightbox-close {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  width: 46px;
-  height: 46px;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(255,255,255,.14);
-  color: #fff;
-  font-size: 34px;
-  line-height: 1;
-  cursor: pointer;
-}
-.photo-lightbox-hint {
-  position: absolute;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(255,255,255,.8);
-  font-size: 14px;
-  text-align: center;
-}
-@media (max-width: 767px) {
-  .photo-lightbox { padding: 12px; }
-  .photo-lightbox img { max-width: 96vw; max-height: 84vh; border-radius: 6px; }
-  .photo-lightbox-close { top: 10px; right: 10px; }
-}
+.photo-clickable{cursor:zoom-in!important;}
+.photo-lightbox{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,.88);}
+.photo-lightbox.open{display:flex;}
+.photo-lightbox img{max-width:96vw;max-height:90vh;width:auto;height:auto;object-fit:contain;border-radius:8px;cursor:zoom-out;}
+.photo-lightbox-close{position:absolute;top:14px;right:18px;width:46px;height:46px;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font-size:34px;cursor:pointer;}
+.photo-lightbox-hint{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.8);font-size:14px;text-align:center;}
+@media(max-width:767px){.photo-lightbox{padding:12px}.photo-lightbox img{max-height:84vh}.photo-lightbox-close{top:10px;right:10px}}
 </style>
 
 </head>
@@ -982,9 +950,12 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 </ul>
 </nav>
 <div class="header-cta">
-<div class="phone-block">
-<a class="phone" href="tel:+79663892133">+7 966 389 21 33<small>с 7:00 до 23:00</small></a>
+<div class="header-contact-buttons" aria-label="Связаться с нами">
+  <a class="btn header-max-btn" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE" target="_blank" rel="noopener noreferrer">
+    Написать в MAX <span class="arrow">↗</span>
+  </a>
 </div>
+
 
 <button aria-label="Открыть меню" class="menu-trigger" id="menuTrigger"><span></span><span></span></button>
 </div>
@@ -1008,7 +979,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <li><a href="#contacts">Контакты</a></li>
 </ul>
 <div class="mobile-menu-foot">
-<a class="phone" href="tel:+79663892133" style="align-items:flex-start;">+7 966 389 21 33<small>с 7:00 до 23:00</small></a>
+<a class="phone" href="tel:+7 966 389 21 33" style="align-items:flex-start;">+7 966 389 21 33<small>с 7:00 до 23:00</small></a>
 
 </div>
 </div>
@@ -1030,7 +1001,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <li>От осмотра и расчёта до сдачи готового результата</li>
 </ul>
 <div class="hero-btns">
-<a class="btn mobile-call-desktop-original btn-outline btn-lg" href="tel:+79663892133">Позвонить</a><a class="mobile-max-button btn btn-outline btn-lg" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener noreferrer">Написать в MAX <span class="arrow">↗</span></a>
+<a class="btn btn-outline btn-lg" href="tel:+7 966 389 21 33">Позвонить</a>
 
 </div>
 </div>
@@ -1304,7 +1275,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <li><strong>По всей задаче</strong> — можем выполнить отдельный этап или комплекс работ</li>
 </ul>
 <div class="hero-btns">
-<a class="btn mobile-call-desktop-original btn-outline" href="tel:+79663892133">Уточнить по телефону</a><a class="mobile-max-button btn btn-outline btn-lg" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener noreferrer">Написать в MAX <span class="arrow">↗</span></a>
+<a class="btn btn-outline" href="tel:+7 966 389 21 33">Уточнить по телефону</a>
 
 </div>
 </div>
@@ -1549,7 +1520,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <div>
 <h4>Контакты</h4>
 <ul>
-<li><a href="tel:+79663892133">+7 966 389 21 33 — позвонить</a></li>
+<li><a href="tel:+7 966 389 21 33">+7 966 389 21 33 — позвонить</a></li>
 <li></li>
 <li>Режим работы: 7:00–23:00</li>
 <li>Москва и Московская область</li>
@@ -2083,7 +2054,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 </script>
 <style id="final-beige-blue-theme">
-/* Финальная визуальная настройка: бежевый фон + синий акцент + чёрный текст */
+/* ЕДИНСТВЕННАЯ АКТИВНАЯ ТЕМА: бежевый + синий + чёрный */
 :root{
   --sand:#F3EBDD !important;
   --sand-deep:#E9DDC9 !important;
@@ -2102,138 +2073,33 @@ document.addEventListener('DOMContentLoaded', function(){
   --white:#FFFDF8 !important;
   --radius:0px !important;
 }
-
-html,body{background:var(--sand)!important;color:#111!important;}
+html,body{
+  background:#F3EBDD !important;
+  color:#111111 !important;
+}
 body{overflow-x:hidden;}
-h1,h2,h3,h4,h5,h6,p,li,span,div,label,small{color:inherit;}
-p,.lead,.quick-item p,.cat-card p,.svc-card p,.adv-item p,.step p,
-.review-text,.info-copy p,.faq-a p,.modal-box p{color:#171717!important;}
-a{color:#111;}
-a:hover,a:focus{color:var(--accent)!important;}
-::selection{background:var(--accent)!important;color:#fff!important;}
-
-/* Никаких графитовых/тёмных плашек */
-.dark,
-.quiz-intro,
-.final-cta,
-.final-box,
-.cookie-banner,
-.portfolio-num,
-.spec-tag,
-.btn-outline:hover,
-.btn-outline:focus-visible,
-.filter-pill.active,
-.proof-tab.active,
-.back-to-top{
-  background:var(--sand)!important;
-  color:#111!important;
-  border-color:var(--border)!important;
+.hero{background:#F3EBDD !important;}
+a{color:#111111;}
+a:hover,a:focus{color:#2F80FF !important;}
+.btn,.btn-accent{
+  background:#1E5EFF !important;
+  border-color:#1E5EFF !important;
+  color:#FFFFFF !important;
 }
-.final-cta{border-top:1px solid var(--border)!important;}
-.final-cta h2,.final-cta p,.final-cta .final-note,.final-cta .final-box,
-.dark h1,.dark h2,.dark h3,.dark h4,.dark p,.dark span,
-.quiz-intro h2,.quiz-intro p,.quiz-intro .eyebrow,
-.cookie-banner p,.cookie-banner span{color:#111!important;}
-.final-box{box-shadow:none!important;}
-.final-note{border-color:var(--border)!important;color:#4F4F4F!important;}
-.final-cta .btn-outline{background:transparent!important;color:#111!important;border-color:#111!important;}
-.final-cta .btn-outline:hover{background:var(--accent)!important;color:#fff!important;border-color:var(--accent)!important;}
-
-/* Синие акценты */
-.btn,.btn-accent{background:var(--btn-blue)!important;border-color:var(--btn-blue)!important;color:#fff!important;}
-.btn:hover,.btn:focus-visible,.btn-accent:hover{background:var(--btn-blue-hover)!important;border-color:var(--btn-blue-hover)!important;color:#fff!important;}
-.logo .mark,.badge-hot,.cat-card .cat-arrow,.hero-checks li::before,.quick-item .qi-ico,
-.map-full-link,.quiz-progress-fill,.filter-pill.active{
-  background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important;
+.btn:hover,.btn:focus-visible,.btn-accent:hover{
+  background:#174BD0 !important;
+  border-color:#174BD0 !important;
+  color:#FFFFFF !important;
 }
-.eyebrow,.text-link:hover,.faq-q .plus,.portfolio-info .cat,.svc-card .svc-num,
-.adv-item .adv-num,.step .num,.quiz-summary-copy-hint{color:var(--accent)!important;}
-.eyebrow::before{background:var(--accent)!important;}
-.quiz-opt:hover,.quiz-opt.selected,.quick-item:hover,.svc-card:hover,.adv-item:hover,.cat-card:hover,
-.dropdown a:hover{background:var(--accent-soft)!important;}
-.quiz-opt:hover,.quiz-opt.selected{border-color:var(--accent)!important;}
-.quiz-intro{background:var(--sand)!important;}
-.quiz-intro .eyebrow,.quiz-intro .eyebrow::before{color:var(--accent)!important;background:var(--accent)!important;}
-
-/* Карточки — светлые, без графита */
-.quick-item,.svc-card,.adv-item,.cat-card,.portfolio-item,.review-card,
-.quiz-opt,.quiz-wrap,.modal-box,.ph,.gallery-item,.step,.review-nav,
-.dropdown,.map-ph,.quiz-summary,.quiz-contact-form input,.quiz-contact-form textarea{
-  background:var(--white)!important;
-  color:#111!important;
+.btn-outline{
+  background:transparent !important;
+  color:#111111 !important;
+  border-color:#111111 !important;
 }
-.quiz-wrap,.cat-card,.portfolio-item,.review-card,.gallery-item{box-shadow:none!important;}
-
-/* MAX */
-.btn-max{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:7px!important;
-  min-height:42px!important;
-  padding:10px 16px!important;
-  background:var(--accent)!important;
-  color:#fff!important;
-  border:1px solid var(--accent)!important;
-  border-radius:0!important;
-  font-family:var(--f-mono)!important;
-  font-size:13px!important;
-  font-weight:700!important;
-  letter-spacing:.05em!important;
-  text-transform:uppercase!important;
-  text-decoration:none!important;
-  box-shadow:none!important;
-}
-.btn-max span{color:#fff!important;}
-.btn-max:hover{background:var(--btn-blue-hover)!important;color:#fff!important;border-color:var(--btn-blue-hover)!important;transform:translateY(-1px);}
-.phone-block{gap:4px!important;}
-.phone{color:#111!important;}
-.phone small{color:#4F4F4F!important;}
-
-/* Видео не запускаются сами */
-.stock-video-card,.stock-video,.video-modal-box{border-radius:0!important;}
-.stock-video-card{background:var(--white)!important;}
-.play-badge{background:var(--accent)!important;box-shadow:none!important;}
-.video-modal-overlay{background:rgba(243,235,221,.96)!important;}
-.video-modal-box{background:var(--white)!important;}
-.video-modal-close{background:var(--white)!important;color:#111!important;border-color:#111!important;}
-
-/* Увеличиваем интервалы и предотвращаем налезание текста */
-section{overflow:visible;}
-.wrap{overflow:visible;}
-h1,h2,h3,h4,p,li,a,button,label{overflow-wrap:anywhere;}
-.quick-item,.svc-card,.adv-item,.step,.review-card,.portfolio-info,.cat-label{min-width:0;}
-.quick-item,.svc-card,.adv-item,.step{gap:14px!important;}
-.quiz-question{line-height:1.35!important;margin-bottom:24px!important;}
-.quiz-options{gap:14px!important;}
-.quiz-opt{line-height:1.45!important;min-height:54px!important;}
-.quiz-contact-form{gap:14px!important;margin-top:24px!important;}
-.hero-btns,.final-contact,.header-cta{gap:14px!important;}
-.final-grid{gap:48px!important;}
-.footer-grid{gap:36px!important;}
-.faq-item{padding:20px 0!important;}
-.faq-q{min-height:42px;}
-.faq-a p{padding-top:14px!important;}
-.info-copy p + p{margin-top:20px!important;}
-
-/* Полностью убираем скругления */
-*,*::before,*::after{border-radius:0!important;}
-
-/* На мобильном MAX тоже доступен в меню */
-@media(max-width:760px){
-  .header-cta .btn-max{display:none!important;}
-  .mobile-menu-foot{align-items:stretch!important;}
-  .mobile-menu-foot .btn-max{display:inline-flex!important;width:100%!important;margin-top:10px!important;}
-  .mobile-menu-foot{flex-direction:column!important;}
-  .hero-btns .btn{min-height:50px;}
-  .quick-grid,.cat-grid,.svc-grid,.adv-grid,.video-grid,.portfolio-grid,.review-page{gap:12px!important;}
-  .quick-item,.svc-card,.adv-item,.step,.review-card{padding:18px!important;}
-  .quiz-opt{min-height:48px!important;padding:12px!important;}
-}
-
-/* Tablet/mobile: текстовые колонки не сжимаются */
-@media(max-width:1080px){
-  .hero-grid,.area-grid,.info-grid,.quiz-top{gap:32px!important;}
+.btn-outline:hover,.btn-outline:focus-visible{
+  background:#1E5EFF !important;
+  border-color:#1E5EFF !important;
+  color:#FFFFFF !important;
 }
 </style>
 <script id="max-contact-buttons">
@@ -2409,68 +2275,68 @@ section select {
 </style>
 
 
+<script id="reliable-phone-links">
+(function(){
+  function fixPhoneLinks(){
+    document.querySelectorAll('a[href^="tel:"], a.phone').forEach(function(a){
+      a.setAttribute('href','tel:+79663892133');
+      if (!a.querySelector('input,button')) {
+        var text = (a.textContent || '').trim();
+        if (text && /835\s*:/.test(text)) {
+          a.textContent = text.replace(/835\s*:\s*/g,'');
+        }
+      }
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', fixPhoneLinks);
+  } else {
+    fixPhoneLinks();
+  }
+})();
+</script>
+
+
 <div class="photo-lightbox" id="photoLightbox" aria-hidden="true" role="dialog" aria-label="Просмотр фотографии">
   <button class="photo-lightbox-close" id="photoLightboxClose" type="button" aria-label="Закрыть">×</button>
   <img id="photoLightboxImage" src="" alt="">
   <div class="photo-lightbox-hint">Нажмите на фото или Esc, чтобы закрыть</div>
 </div>
-
 <script id="photo-lightbox-script">
-(function () {
-  function initPhotoLightbox() {
-    const box = document.getElementById('photoLightbox');
-    const image = document.getElementById('photoLightboxImage');
-    const close = document.getElementById('photoLightboxClose');
-    if (!box || !image || !close) return;
-
-    const photos = Array.from(document.querySelectorAll('img'))
-      .filter(function (img) {
-        return !img.closest('#photoLightbox') && (img.currentSrc || img.src);
-      });
-
-    function openPhoto(img) {
-      image.src = img.currentSrc || img.src;
-      image.alt = img.alt || 'Фотография';
-      box.classList.add('open');
-      box.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closePhoto() {
-      box.classList.remove('open');
-      box.setAttribute('aria-hidden', 'true');
-      image.src = '';
-      document.body.style.overflow = '';
-    }
-
-    photos.forEach(function (img) {
+(function(){
+  function init(){
+    var box=document.getElementById('photoLightbox');
+    var image=document.getElementById('photoLightboxImage');
+    var close=document.getElementById('photoLightboxClose');
+    if(!box||!image||!close)return;
+    document.querySelectorAll('img').forEach(function(img){
+      if(img.closest('#photoLightbox'))return;
       img.classList.add('photo-clickable');
-      img.addEventListener('click', function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-        openPhoto(img);
+      img.addEventListener('click',function(e){
+        e.preventDefault();
+        image.src=img.currentSrc||img.src;
+        image.alt=img.alt||'Фотография';
+        box.classList.add('open');
+        box.setAttribute('aria-hidden','false');
+        document.body.style.overflow='hidden';
       });
     });
-
-    close.addEventListener('click', closePhoto);
-    image.addEventListener('click', closePhoto);
-    box.addEventListener('click', function (event) {
-      if (event.target === box) closePhoto();
-    });
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && box.classList.contains('open')) closePhoto();
-    });
+    function hide(){
+      box.classList.remove('open');
+      box.setAttribute('aria-hidden','true');
+      image.src='';
+      document.body.style.overflow='';
+    }
+    close.addEventListener('click',hide);
+    image.addEventListener('click',hide);
+    box.addEventListener('click',function(e){if(e.target===box)hide();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')hide();});
   }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPhotoLightbox);
-  } else {
-    initPhotoLightbox();
-  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
-
 </body>
+
 </html>
 
 <style id="mobile-final-compact">
