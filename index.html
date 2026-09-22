@@ -954,7 +954,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <li>От осмотра и расчёта до сдачи готового результата</li>
 </ul>
 <div class="hero-btns">
-<a class="btn btn-outline btn-lg" href="tel:">Позвонить</a>
+<a class="btn btn-outline btn-lg" href="tel:+79663892133">Позвонить</a>
 
 </div>
 </div>
@@ -1228,7 +1228,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <li><strong>По всей задаче</strong> — можем выполнить отдельный этап или комплекс работ</li>
 </ul>
 <div class="hero-btns">
-<a class="btn btn-outline" href="tel:+79663892133">Уточнить по телефону</a>
+<a class="btn btn-outline btn-max-cta" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener noreferrer">Написать в MAX <span class="arrow">↗</span></a>
 
 </div>
 </div>
@@ -1445,7 +1445,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <form class="final-contact-form" id="finalContactForm">
 <div class="final-form-row">
 <label><span>Имя</span><input type="text" name="name" autocomplete="name" placeholder="Ваше имя" required></label>
-<label><span>Телефон</span><input type="tel" name="phone" autocomplete="tel" placeholder="+7 000 000 00 00" required></label>
+<label><span>Телефон</span><input type="tel" name="phone" autocomplete="tel" placeholder="+7 966 389 21 33" required></label>
 </div>
 <label><span>Что нужно сделать?</span><textarea name="message" rows="3" placeholder="Например: ремонт крыши, пристройка, фасад…"></textarea></label>
 <button class="btn btn-lg btn-accent" type="submit">Оставить заявку <span class="arrow">→</span></button>
@@ -1473,7 +1473,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <div>
 <h4>Контакты</h4>
 <ul>
-<li><a href="tel:+79663892133">+7 966 389 21 33 — позвонить</a></li>
+<li><a href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener noreferrer">Написать в MAX ↗</a></li>
 <li></li>
 <li>Режим работы: 7:00–23:00</li>
 <li>Москва и Московская область</li>
@@ -2331,6 +2331,54 @@ section select {
   visibility: visible !important;
 }
 </style>
+
+
+<div class="photo-lightbox" id="photoLightbox" aria-hidden="true" role="dialog" aria-label="Просмотр фотографии">
+  <button class="photo-lightbox-close" id="photoLightboxClose" type="button" aria-label="Закрыть">×</button>
+  <img id="photoLightboxImage" src="" alt="">
+  <div class="photo-lightbox-hint">Нажмите на фото или Esc, чтобы закрыть</div>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var lb = document.getElementById('photoLightbox');
+  var lbImg = document.getElementById('photoLightboxImage');
+  var lbClose = document.getElementById('photoLightboxClose');
+  if(!lb || !lbImg) return;
+
+  var images = document.querySelectorAll('img');
+  images.forEach(function(img){
+    if(!img.src || img.closest('#photoLightbox') || img.closest('svg')) return;
+    img.classList.add('photo-clickable');
+    img.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt || 'Фотография';
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLightbox(){
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden','true');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  lbClose.addEventListener('click', closeLightbox);
+  lbImg.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', function(e){
+    if(e.target === lb) closeLightbox();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
+  });
+});
+</script>
 
 </body>
 </html>
