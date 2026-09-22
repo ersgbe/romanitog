@@ -494,7 +494,7 @@ footer{padding:var(--s-8) 0 var(--s-6); font-size:15.6px; color:var(--stone); ba
   --accent-soft:#FFF6E5;
   --radius:2px;
 }
-.hero{background:linear-gradient(135deg,#FBFCFD 0%,#F7F8FA 62%,#FFF9EF 100%);}
+.hero{background:#FFFFFF!important;}
 .hero-grid{gap:clamp(32px,5vw,72px);}
 .hero-copy h1{font-weight:400; letter-spacing:-.025em;}
 .hero-visual .ph-photo{box-shadow:18px 18px 0 rgba(215,154,43,.12);}
@@ -517,8 +517,8 @@ footer{padding:var(--s-8) 0 var(--s-6); font-size:15.6px; color:var(--stone); ba
 
 
 /* Старое меню страниц заменено на компактный dropdown в шапке. */
-.quiz-comment{width:100%;min-height:82px;margin-top:14px;padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--sand);font:inherit;resize:vertical}
-.quiz-comment:focus{outline:2px solid rgba(215,154,43,.35);border-color:#D79A2B}
+.quiz-comment{width:100%;min-height:82px;margin-top:14px;padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:#FFFFFF;font:inherit;resize:vertical}
+.quiz-comment:focus{outline:2px solid rgba(255,90,31,.3);border-color:#FF5A1F}
 </style>
 <style>
 /* Финальная настройка: компактные варианты и форма калькулятора */
@@ -730,24 +730,28 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 
 
 <style id="mobile-quiz-and-card-borders">
-/* Калькулятор на телефоне: графитовые кнопки с белым текстом */
+/* Калькулятор на телефоне: белые кнопки */
 @media (max-width: 760px){
   #quiz .quiz-opt,
   #quiz .quiz-opt:visited{
-    background:#202124 !important;
-    color:#fff !important;
-    border-color:#202124 !important;
+    background:#FFFFFF !important;
+    color:#0F1724 !important;
+    border-color:#E2E5EA !important;
   }
   #quiz .quiz-opt:hover,
-  #quiz .quiz-opt:focus-visible,
+  #quiz .quiz-opt:focus-visible{
+    background:#FFF1E8 !important;
+    color:#0F1724 !important;
+    border-color:#FF5A1F !important;
+  }
   #quiz .quiz-opt.selected,
   #quiz .quiz-opt.active,
   #quiz .quiz-opt[aria-pressed="true"]{
-    background:#202124 !important;
-    color:#fff !important;
-    border-color:#202124 !important;
+    background:#FFF1E8 !important;
+    color:#0F1724 !important;
+    border-color:#FF5A1F !important;
   }
-  #quiz .quiz-opt.selected::after{color:#fff !important;}
+  #quiz .quiz-opt.selected::after{color:#2F80FF !important;}
 }
 
 /* Белый фон + отдельная обводка вокруг каждого подблока */
@@ -924,6 +928,47 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 @media(max-width:767px){.photo-lightbox{padding:12px}.photo-lightbox img{max-height:84vh}.photo-lightbox-close{top:10px;right:10px}}
 </style>
 
+
+<style id="white-background-green-call-fixes">
+  /* Белый фон страницы */
+  html, body {
+    background: #fff !important;
+  }
+  .hero,
+  footer,
+  .mobile-menu,
+  .final-cta,
+  .dark,
+  .quiz-intro {
+    background: #fff !important;
+    color: var(--graphite) !important;
+  }
+  .final-cta h2,
+  .final-cta .lead,
+  .final-cta p,
+  .quiz-intro h2,
+  .quiz-intro p {
+    color: var(--graphite) !important;
+  }
+  .final-box {
+    background: #fff !important;
+  }
+
+  /* Все кнопки, ведущие на звонок, — зелёные */
+  a.btn[href^="tel:"] {
+    background: #22A447 !important;
+    border-color: #22A447 !important;
+    color: #fff !important;
+  }
+  a.btn[href^="tel:"]:hover,
+  a.btn[href^="tel:"]:focus-visible {
+    background: #18863A !important;
+    border-color: #18863A !important;
+    color: #fff !important;
+    box-shadow: 0 10px 24px rgba(34, 164, 71, .22);
+  }
+</style>
+
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -979,7 +1024,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <li><a href="#contacts">Контакты</a></li>
 </ul>
 <div class="mobile-menu-foot">
-<a class="phone" href="tel:+7 966 389 21 33" style="align-items:flex-start;">+7 966 389 21 33<small>с 7:00 до 23:00</small></a>
+<a class="phone" href="tel:+79663892133" style="align-items:flex-start;">+7 966 389 21 33<small>с 7:00 до 23:00</small></a>
 
 </div>
 </div>
@@ -1001,8 +1046,8 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <li>От осмотра и расчёта до сдачи готового результата</li>
 </ul>
 <div class="hero-btns">
-<a class="btn btn-outline btn-lg" href="tel:+7 966 389 21 33">Позвонить</a>
-
+<a class="btn btn-outline btn-lg" href="tel:+79663892133">Позвонить</a>
+<a class="btn btn-lg hero-max-btn" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener noreferrer">МАКС <span class="arrow">↗</span></a>
 </div>
 </div>
 <div class="hero-visual reveal">
@@ -1155,13 +1200,13 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 
       <!-- Видео 2 -->
       <div class="stock-video-card">
-        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/vZ-X9lmvlOV4?from=ydo" allow="fullscreen" allowfullscreen frameborder="0"></iframe>
+        <iframe class="stock-video" src="https://www.image2url.com/r2/default/videos/1790096152777-1f7eaf22-5c32-44a3-a589-c342cf41f686.mp4" allow="fullscreen" allowfullscreen frameborder="0"></iframe>
       </div>
 
 
       <!-- Видео 2 -->
       <div class="stock-video-card">
-        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/v0OvR-F9dPQ8?from=ydo" allow="fullscreen" allowfullscreen frameborder="0"></iframe>
+        <iframe class="stock-video" src="https://www.image2url.com/r2/default/videos/1790096055435-a869be90-b608-4578-ba71-410a86391990.mp4" allow="fullscreen" allowfullscreen frameborder="0"></iframe>
       </div>
 
       <!-- Видео 3 -->
@@ -1176,7 +1221,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 
       <!-- Видео 5 -->
       <div class="stock-video-card">
-        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/vRRkRdspJF1E?from=ydo" allow="fullscreen" allowfullscreen frameborder="0"></iframe>
+        <iframe class="stock-video" src="https://www.image2url.com/r2/default/videos/1790096089674-6d6019b9-d045-464d-bc80-a6d0a9f27873.mp4" allow="fullscreen" allowfullscreen frameborder="0"></iframe>
       </div>
 
         <!-- Видео 5 -->
@@ -1520,7 +1565,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <div>
 <h4>Контакты</h4>
 <ul>
-<li><a href="tel:+7 966 389 21 33">+7 966 389 21 33 — позвонить</a></li>
+<li><a href="tel:+79663892133">+7 966 389 21 33 — позвонить</a></li>
 <li></li>
 <li>Режим работы: 7:00–23:00</li>
 <li>Москва и Московская область</li>
@@ -2053,11 +2098,54 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 </script>
+<style id="footer-max-btn-style">
+/* Fix 7: кнопка MAX в подвале */
+footer .btn-max,
+.mobile-menu-foot .btn-max{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:6px !important;
+  background:#1E5EFF !important;
+  color:#fff !important;
+  border:1px solid #1E5EFF !important;
+  padding:10px 18px !important;
+  font-family:var(--f-mono) !important;
+  font-size:13.2px !important;
+  font-weight:600 !important;
+  text-transform:uppercase !important;
+  letter-spacing:.04em !important;
+  text-decoration:none !important;
+  cursor:pointer !important;
+  transition:background .18s, border-color .18s !important;
+}
+footer .btn-max:hover,
+footer .btn-max:focus-visible,
+.mobile-menu-foot .btn-max:hover,
+.mobile-menu-foot .btn-max:focus-visible{
+  background:#174BD0 !important;
+  border-color:#174BD0 !important;
+  color:#fff !important;
+  text-decoration:none !important;
+  transform:translateY(-2px) !important;
+}
+</style>
+<style id="hero-max-btn-style">
+.hero-max-btn{
+  background:#1E5EFF !important;
+  border-color:#1E5EFF !important;
+  color:#fff !important;
+}
+.hero-max-btn:hover,.hero-max-btn:focus-visible{
+  background:#ffffff !important;
+  border-color:#174BD0 !important;
+  color:#fff !important;
+}
+</style>
 <style id="final-beige-blue-theme">
 /* ЕДИНСТВЕННАЯ АКТИВНАЯ ТЕМА: бежевый + синий + чёрный */
 :root{
   --sand:#F3EBDD !important;
-  --sand-deep:#E9DDC9 !important;
+  --sand-deep:#bdbdbd !important;
   --graphite:#111111 !important;
   --clay:#1E5EFF !important;
   --btn-blue:#1E5EFF !important;
@@ -2102,6 +2190,18 @@ a:hover,a:focus{color:#2F80FF !important;}
   color:#FFFFFF !important;
 }
 </style>
+<script id="category-scroll-to-quiz">
+/* Fix 5: при клике на категорию — плавный скролл к калькулятору */
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.cat-card[href="#quiz"], .cat-grid a[href="#quiz"]').forEach(function(card){
+    card.addEventListener('click', function(e){
+      e.preventDefault();
+      var quiz = document.getElementById('quiz');
+      if(quiz){ quiz.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  });
+});
+</script>
 <script id="max-contact-buttons">
 (function(){
   var MAX_URL='https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8';
@@ -2160,7 +2260,7 @@ a:hover,a:focus{color:#2F80FF !important;}
 }
 
 .quiz-intro {
-  background: #F3EBDD !important;
+  background: #FFFFFF !important;
   padding: 28px 32px !important;
   margin-bottom: 24px !important;
   position: relative !important;
@@ -2198,8 +2298,8 @@ select,
 .calc-option,
 .choice,
 .choice-card {
-  background: #E9DDC9 !important;
-  background-color: #E9DDC9 !important;
+  background: #ececec !important;
+  background-color: #ececec !important;
   color: #111111 !important;
   border-color: #CDBFA9 !important;
   box-shadow: none !important;
@@ -2234,7 +2334,7 @@ select:focus {
 section input,
 section textarea,
 section select {
-  background: #E9DDC9 !important;
+  background: #ececec !important;
   color: #111111 !important;
   border-color: #CDBFA9 !important;
 }
@@ -2465,5 +2565,155 @@ section select {
     font-size:12px!important;
     line-height:1.45!important;
   }
+}
+</style>
+
+<style id="final-all-fixes">
+/* ===== ФИНАЛЬНЫЕ ПРАВКИ: БЕЛЫЙ ФОН, УБРАТЬ БЕЖЕВЫЙ ===== */
+
+/* ─── 1. Глобальный белый фон и чёткий текст ─── */
+html, body {
+  background: #FFFFFF !important;
+  color: #0F1724 !important;
+}
+
+/* ─── 2. Все бежевые/кремовые/песочные переменные → белые ─── */
+:root {
+  --sand: #FFFFFF !important;
+  --sand-deep: #F5F6F8 !important;
+  --accent-soft: #FFF1E8 !important;
+}
+
+/* ─── 3. Секции и hero — белый фон ─── */
+section, .hero, .hero-wrap,
+.pad-lg, .pad-md, .pad-sm {
+  background: #FFFFFF !important;
+}
+
+/* ─── 4. Карточки и сетки — белый ─── */
+.quick-item, .svc-card, .adv-item, .step,
+.cat-card, .review-card, .video-item,
+.ph, .portfolio-item {
+  background: #FFFFFF !important;
+}
+.quick-grid, .cat-grid, .svc-grid, .adv-grid,
+.video-grid, .portfolio-grid, .steps-row, .review-page {
+  background: #FFFFFF !important;
+}
+
+/* ─── 5. Мобильное меню ─── */
+.mobile-menu {
+  background: #FFFFFF !important;
+}
+
+/* ─── 6. Плашки калькулятора (desktop) — белый ─── */
+#quiz .quiz-opt {
+  background: #FFFFFF !important;
+  color: #0F1724 !important;
+  border-color: #E2E5EA !important;
+}
+#quiz .quiz-opt:hover,
+#quiz .quiz-opt:focus-visible {
+  background: #FFF1E8 !important;
+  color: #0F1724 !important;
+  border-color: #FF5A1F !important;
+}
+#quiz .quiz-opt.selected,
+#quiz .quiz-opt.active,
+#quiz .quiz-opt[aria-pressed="true"] {
+  background: #FFF1E8 !important;
+  color: #0F1724 !important;
+  border-color: #FF5A1F !important;
+}
+#quiz .quiz-opt.selected::after {
+  color: #FF5A1F !important;
+}
+
+/* ─── 7. Плашки калькулятора (мобильный) — белый ─── */
+@media (max-width: 760px) {
+  #quiz .quiz-opt,
+  #quiz .quiz-opt:visited {
+    background: #FFFFFF !important;
+    color: #0F1724 !important;
+    border-color: #E2E5EA !important;
+  }
+  #quiz .quiz-opt:hover,
+  #quiz .quiz-opt:focus-visible {
+    background: #FFF1E8 !important;
+    color: #0F1724 !important;
+    border-color: #FF5A1F !important;
+  }
+  #quiz .quiz-opt.selected,
+  #quiz .quiz-opt.active,
+  #quiz .quiz-opt[aria-pressed="true"] {
+    background: #FFF1E8 !important;
+    color: #0F1724 !important;
+    border-color: #FF5A1F !important;
+  }
+  #quiz .quiz-opt.selected::after {
+    color: #FF5A1F !important;
+  }
+}
+
+/* ─── 8. Комментарий (textarea) в квизе ─── */
+.quiz-comment {
+  background: #FFFFFF !important;
+  border-color: #E2E5EA !important;
+}
+
+/* ─── 9. Белый фон в quiz-wrap (правая часть) ─── */
+#quiz .quiz-wrap,
+#quiz .quiz-body {
+  background: #FFFFFF !important;
+}
+
+/* ─── 10. Красивая типографика: тонкие засечки для заголовков, чистый текст ─── */
+h1 {
+  font-weight: 300 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.05 !important;
+}
+h2 {
+  font-weight: 300 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.1 !important;
+}
+h3 {
+  font-weight: 500 !important;
+  letter-spacing: -0.015em !important;
+}
+h4 {
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+}
+.lead {
+  font-size: 18px !important;
+  line-height: 1.75 !important;
+  color: #374151 !important;
+  font-weight: 400 !important;
+}
+p {
+  line-height: 1.7 !important;
+}
+.eyebrow {
+  letter-spacing: 0.12em !important;
+  font-size: 12px !important;
+}
+
+/* ─── 11. Статистика hero — чёрный крупный ─── */
+.stat b {
+  color: #0F1724 !important;
+  font-weight: 200 !important;
+  letter-spacing: -0.04em !important;
+}
+
+/* ─── 12. Мелкий текст / muted — серый, не бежевый ─── */
+.stat span, .phone small, .form-note, .final-note {
+  color: #6B7280 !important;
+}
+
+/* ─── 13. Убираем ph-placeholder — серая рамка без бежевого ─── */
+.ph {
+  background: linear-gradient(160deg, #F5F6F8 0%, #ECECEE 100%) !important;
 }
 </style>
