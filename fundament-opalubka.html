@@ -421,6 +421,79 @@ footer{ padding:var(--s-8) 0 var(--s-6); font-size:15.6px; color:var(--stone); b
 }
 
 </style>
+
+<style id="beige-blue-theme-override">
+/* === БЕЖЕВЫЙ ФОН + СИНИЕ ЗАГОЛОВКИ === */
+:root {
+  --sand: #F5F0E8;
+  --sand-deep: #EDE7D8;
+  --graphite: #1a1a1a;
+  --clay: #1a3c6e;
+  --btn-blue: #1a3c6e;
+  --btn-blue-hover: #24509a;
+  --accent: #1a3c6e;
+  --accent-2: #2d5ba8;
+  --accent-soft: #e8eef8;
+  --olive: #3a5a8a;
+  --stone: #555555;
+  --ink-70: #222222;
+  --border: #d8cfc0;
+  --border-strong: #1a3c6e;
+  --white: #FFFDF8;
+}
+body { background: #F5F0E8 !important; color: #1a1a1a !important; }
+h1, h2, h3, h4, h5, h6 { color: #1a3c6e !important; }
+.section-title { color: #1a3c6e !important; }
+.eyebrow { color: #1a3c6e !important; }
+.eyebrow::before { background: #1a3c6e !important; }
+.hero { background: linear-gradient(135deg, #F5F0E8 0%, #EDE7D8 60%, #e8eef8 100%) !important; }
+.quick-item, .svc-card, .adv-item, .cat-card, .review-card, .step, .gallery-item, .portfolio-item {
+  background: #FFFDF8 !important;
+}
+.quick-item:hover, .svc-card:hover, .adv-item:hover, .step:hover {
+  background: #e8eef8 !important;
+}
+.quick-item .qi-ico { background: #1a3c6e !important; border-color: #1a3c6e !important; }
+.cat-card .cat-arrow { background: #1a3c6e !important; }
+.hero-checks li::before { background: #1a3c6e !important; color: #fff !important; }
+.svc-card .svc-num, .adv-item .adv-num, .step .num { color: #1a3c6e !important; }
+.faq-q .plus { color: #1a3c6e !important; }
+.logo .mark { background: #1a3c6e !important; border-color: #1a3c6e !important; }
+.badge-hot { background: #1a3c6e !important; }
+.filter-pill.active { background: #1a3c6e !important; border-color: #1a3c6e !important; }
+.map-full-link { background: #1a3c6e !important; }
+.map-full-link:hover { background: #24509a !important; }
+.play-badge { background: rgba(26,60,110,.85) !important; }
+.btn-accent { background: #1a3c6e !important; border-color: #1a3c6e !important; }
+.btn-accent:hover { background: #24509a !important; border-color: #24509a !important; }
+.review-card .quote-mark { color: #1a3c6e !important; }
+.review-head .stars { color: #1a3c6e !important; }
+.portfolio-info .cat { color: #1a3c6e !important; }
+.quiz-intro { background: #1a3c6e !important; }
+.final-cta { background: linear-gradient(120deg, #12294d, #1a3c6e) !important; }
+.final-box { background: #0f2040 !important; border-color: #2d5ba8 !important; }
+.proof-tab.active { background: #1a3c6e !important; color: #fff !important; }
+.review-dot.is-active { background: #1a3c6e !important; }
+.review-nav:hover { background: #1a3c6e !important; border-color: #1a3c6e !important; }
+.quiz-opt.selected, .quiz-opt.selected:hover { border-color: #1a3c6e !important; background: #e8eef8 !important; color: #1a1a1a !important; }
+.quiz-opt.selected::after { color: #1a3c6e !important; }
+.quiz-progress-fill { background: #1a3c6e !important; }
+header.solid { background: rgba(245,240,232,.95) !important; }
+.mobile-menu { background: #F5F0E8 !important; }
+footer { background: #EDE7D8 !important; }
+::selection { background: #1a3c6e !important; color: #fff !important; }
+a:hover, a:focus { color: #1a3c6e !important; }
+#quiz .quiz-opt:hover, #quiz .quiz-opt.selected, #quiz .quiz-opt.active,
+#quiz .quiz-opt[aria-pressed="true"] {
+  background: #1a3c6e !important; color: #fff !important; border-color: #1a3c6e !important;
+}
+@media (max-width: 760px) {
+  #quiz .quiz-opt, #quiz .quiz-opt:visited {
+    background: #1a3c6e !important; color: #fff !important; border-color: #1a3c6e !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -448,6 +521,7 @@ footer{ padding:var(--s-8) 0 var(--s-6); font-size:15.6px; color:var(--stone); b
     <div class="phone-block">
       <a class="phone" href="tel:+79663892133">+7 966 389 21 33<small>с 7:00 до 23:00</small></a>
     </div>
+<a class="btn-max" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener">Написать в Макс</a>
     <button aria-label="Открыть меню" class="menu-trigger" id="menuTrigger"><span></span><span></span></button>
   </div>
 </div>
@@ -470,6 +544,7 @@ footer{ padding:var(--s-8) 0 var(--s-6); font-size:15.6px; color:var(--stone); b
   </ul>
   <div class="mobile-menu-foot">
     <a class="phone" href="tel:+79663892133" style="align-items:flex-start;">+7 966 389 21 33<small>с 7:00 до 23:00</small></a>
+<a class="btn-max" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener">Написать в Макс</a>
   </div>
 </div>
 
@@ -658,7 +733,8 @@ footer{ padding:var(--s-8) 0 var(--s-6); font-size:15.6px; color:var(--stone); b
       <li><strong>Новая кровля</strong> — монтаж конструкции и покрытия с нуля</li>
       <li><strong>Ремонт</strong> — локальное восстановление и замена участков</li>
     </ul>
-    <div class="hero-btns"><a class="btn btn-outline" href="tel:+79663892133">Уточнить по телефону</a></div>
+    <div class="hero-btns"><a class="btn btn-outline" href="tel:+79663892133">Уточнить по телефону</a>
+<a class="btn-max" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener">Написать в Макс</a></div>
   </div>
   <div class="map-ph reveal">
     <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=35.1421%2C54.9418%2C40.2056%2C56.4813&layer=mapnik&marker=55.7558%2C37.6173" title="Москва и Московская область"></iframe>
