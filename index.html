@@ -880,6 +880,82 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 })();
 </script>
 
+
+<style id="mobile-max-cta-styles">
+@media (max-width: 767px) {
+  .mobile-call-desktop-original { display: none !important; }
+  .mobile-max-button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    text-decoration: none !important;
+  }
+}
+@media (min-width: 768px) {
+  .mobile-max-button { display: none !important; }
+}
+</style>
+
+
+<style id="photo-lightbox-styles">
+.photo-clickable {
+  cursor: zoom-in !important;
+}
+.photo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0,0,0,.88);
+}
+.photo-lightbox.open {
+  display: flex;
+}
+.photo-lightbox img {
+  display: block;
+  max-width: min(96vw, 1400px);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  cursor: zoom-out;
+  box-shadow: 0 20px 80px rgba(0,0,0,.45);
+}
+.photo-lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.14);
+  color: #fff;
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+}
+.photo-lightbox-hint {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,.8);
+  font-size: 14px;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .photo-lightbox { padding: 12px; }
+  .photo-lightbox img { max-width: 96vw; max-height: 84vh; border-radius: 6px; }
+  .photo-lightbox-close { top: 10px; right: 10px; }
+}
+</style>
+
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -954,7 +1030,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <li>От осмотра и расчёта до сдачи готового результата</li>
 </ul>
 <div class="hero-btns">
-<a class="btn btn-outline btn-lg" href="tel:+79663892133">Позвонить</a>
+<a class="btn mobile-call-desktop-original btn-outline btn-lg" href="tel:+79663892133">Позвонить</a><a class="mobile-max-button btn btn-outline btn-lg" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener noreferrer">Написать в MAX <span class="arrow">↗</span></a>
 
 </div>
 </div>
@@ -1228,7 +1304,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <li><strong>По всей задаче</strong> — можем выполнить отдельный этап или комплекс работ</li>
 </ul>
 <div class="hero-btns">
-<a class="btn btn-outline btn-max-cta" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener noreferrer">Написать в MAX <span class="arrow">↗</span></a>
+<a class="btn mobile-call-desktop-original btn-outline" href="tel:+79663892133">Уточнить по телефону</a><a class="mobile-max-button btn btn-outline btn-lg" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener noreferrer">Написать в MAX <span class="arrow">↗</span></a>
 
 </div>
 </div>
@@ -1473,7 +1549,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <div>
 <h4>Контакты</h4>
 <ul>
-<li><a href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener noreferrer">Написать в MAX ↗</a></li>
+<li><a href="tel:+79663892133">+7 966 389 21 33 — позвонить</a></li>
 <li></li>
 <li>Режим работы: 7:00–23:00</li>
 <li>Москва и Московская область</li>
@@ -2339,45 +2415,59 @@ section select {
   <div class="photo-lightbox-hint">Нажмите на фото или Esc, чтобы закрыть</div>
 </div>
 
+<script id="photo-lightbox-script">
+(function () {
+  function initPhotoLightbox() {
+    const box = document.getElementById('photoLightbox');
+    const image = document.getElementById('photoLightboxImage');
+    const close = document.getElementById('photoLightboxClose');
+    if (!box || !image || !close) return;
 
-<script>
-document.addEventListener('DOMContentLoaded', function(){
-  var lb = document.getElementById('photoLightbox');
-  var lbImg = document.getElementById('photoLightboxImage');
-  var lbClose = document.getElementById('photoLightboxClose');
-  if(!lb || !lbImg) return;
+    const photos = Array.from(document.querySelectorAll('img'))
+      .filter(function (img) {
+        return !img.closest('#photoLightbox') && (img.currentSrc || img.src);
+      });
 
-  var images = document.querySelectorAll('img');
-  images.forEach(function(img){
-    if(!img.src || img.closest('#photoLightbox') || img.closest('svg')) return;
-    img.classList.add('photo-clickable');
-    img.addEventListener('click', function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      lbImg.src = img.currentSrc || img.src;
-      lbImg.alt = img.alt || 'Фотография';
-      lb.classList.add('open');
-      lb.setAttribute('aria-hidden','false');
+    function openPhoto(img) {
+      image.src = img.currentSrc || img.src;
+      image.alt = img.alt || 'Фотография';
+      box.classList.add('open');
+      box.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
-    });
-  });
+    }
 
-  function closeLightbox(){
-    lb.classList.remove('open');
-    lb.setAttribute('aria-hidden','true');
-    lbImg.src = '';
-    document.body.style.overflow = '';
+    function closePhoto() {
+      box.classList.remove('open');
+      box.setAttribute('aria-hidden', 'true');
+      image.src = '';
+      document.body.style.overflow = '';
+    }
+
+    photos.forEach(function (img) {
+      img.classList.add('photo-clickable');
+      img.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        openPhoto(img);
+      });
+    });
+
+    close.addEventListener('click', closePhoto);
+    image.addEventListener('click', closePhoto);
+    box.addEventListener('click', function (event) {
+      if (event.target === box) closePhoto();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && box.classList.contains('open')) closePhoto();
+    });
   }
 
-  lbClose.addEventListener('click', closeLightbox);
-  lbImg.addEventListener('click', closeLightbox);
-  lb.addEventListener('click', function(e){
-    if(e.target === lb) closeLightbox();
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
-  });
-});
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPhotoLightbox);
+  } else {
+    initPhotoLightbox();
+  }
+})();
 </script>
 
 </body>
