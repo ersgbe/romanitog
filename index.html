@@ -2575,6 +2575,7 @@ section select {
     if(!box||!image||!close)return;
     document.querySelectorAll('img').forEach(function(img){
       if(img.closest('#photoLightbox'))return;
+      if(img.closest('#about')||img.closest('#contacts'))return;
       img.classList.add('photo-clickable');
       img.addEventListener('click',function(e){
         e.preventDefault();
