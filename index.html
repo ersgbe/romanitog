@@ -1108,33 +1108,33 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 
       <!-- Видео 2 -->
       <div class="stock-video-card">
-        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/vZ-X9lmvlOV4?from=ydo" allow="autoplay; fullscreen" allowfullscreen frameborder="0"></iframe>
+        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/vZ-X9lmvlOV4?from=ydo" allow="fullscreen" allowfullscreen frameborder="0"></iframe>
       </div>
 
 
       <!-- Видео 2 -->
       <div class="stock-video-card">
-        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/v0OvR-F9dPQ8?from=ydo" allow="autoplay; fullscreen" allowfullscreen frameborder="0"></iframe>
+        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/v0OvR-F9dPQ8?from=ydo" allow="fullscreen" allowfullscreen frameborder="0"></iframe>
       </div>
 
       <!-- Видео 3 -->
       <div class="stock-video-card">
-        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/vWBusc68O3CQ?from=ydo" allow="autoplay; fullscreen" allowfullscreen frameborder="0"></iframe>
+        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/vWBusc68O3CQ?from=ydo" allow="fullscreen" allowfullscreen frameborder="0"></iframe>
       </div>
 
       <!-- Видео 4 -->
       <div class="stock-video-card">
-        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/vtVNpywqV8kc?from=ydo" allow="autoplay; fullscreen" allowfullscreen frameborder="0"></iframe>
+        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/vtVNpywqV8kc?from=ydo" allow="fullscreen" allowfullscreen frameborder="0"></iframe>
       </div>
 
       <!-- Видео 5 -->
       <div class="stock-video-card">
-        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/vRRkRdspJF1E?from=ydo" allow="autoplay; fullscreen" allowfullscreen frameborder="0"></iframe>
+        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/vRRkRdspJF1E?from=ydo" allow="fullscreen" allowfullscreen frameborder="0"></iframe>
       </div>
 
         <!-- Видео 5 -->
       <div class="stock-video-card">
-        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/vpmj867JP9Qw?from=ydo" allow="autoplay; fullscreen" allowfullscreen frameborder="0"></iframe>
+        <iframe class="stock-video" src="https://frontend.vh.yandex.ru/player/vpmj867JP9Qw?from=ydo" allow="fullscreen" allowfullscreen frameborder="0"></iframe>
       </div>
 
     </div>
@@ -1556,7 +1556,7 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 <div class="video-modal-overlay" id="videoModalOverlay">
 <div class="video-modal-box">
 <button aria-label="Закрыть видео" class="video-modal-close" id="videoModalClose" type="button">×</button>
-<iframe allow="autoplay; fullscreen" allowfullscreen="" frameborder="0" id="videoModalIframe" loading="lazy" src=""></iframe>
+<iframe allow="fullscreen" allowfullscreen="" frameborder="0" id="videoModalIframe" loading="lazy" src=""></iframe>
 </div>
 </div>
 <script>
@@ -2005,7 +2005,334 @@ document.addEventListener('DOMContentLoaded', function(){
       if(btn){ btn.textContent = 'Заявка заполнена ✓'; btn.disabled = true; }
     });
   }
-</script></body>
+</script>
+<style id="final-beige-blue-theme">
+/* Финальная визуальная настройка: бежевый фон + синий акцент + чёрный текст */
+:root{
+  --sand:#F3EBDD !important;
+  --sand-deep:#E9DDC9 !important;
+  --graphite:#111111 !important;
+  --clay:#1E5EFF !important;
+  --btn-blue:#1E5EFF !important;
+  --btn-blue-hover:#174BD0 !important;
+  --accent:#2F80FF !important;
+  --accent-2:#5AA9FF !important;
+  --accent-soft:#E8F2FF !important;
+  --olive:#111111 !important;
+  --stone:#4F4F4F !important;
+  --ink-70:#171717 !important;
+  --border:#D8CCBA !important;
+  --border-strong:#111111 !important;
+  --white:#FFFDF8 !important;
+  --radius:0px !important;
+}
+
+html,body{background:var(--sand)!important;color:#111!important;}
+body{overflow-x:hidden;}
+h1,h2,h3,h4,h5,h6,p,li,span,div,label,small{color:inherit;}
+p,.lead,.quick-item p,.cat-card p,.svc-card p,.adv-item p,.step p,
+.review-text,.info-copy p,.faq-a p,.modal-box p{color:#171717!important;}
+a{color:#111;}
+a:hover,a:focus{color:var(--accent)!important;}
+::selection{background:var(--accent)!important;color:#fff!important;}
+
+/* Никаких графитовых/тёмных плашек */
+.dark,
+.quiz-intro,
+.final-cta,
+.final-box,
+.cookie-banner,
+.portfolio-num,
+.spec-tag,
+.btn-outline:hover,
+.btn-outline:focus-visible,
+.filter-pill.active,
+.proof-tab.active,
+.back-to-top{
+  background:var(--sand)!important;
+  color:#111!important;
+  border-color:var(--border)!important;
+}
+.final-cta{border-top:1px solid var(--border)!important;}
+.final-cta h2,.final-cta p,.final-cta .final-note,.final-cta .final-box,
+.dark h1,.dark h2,.dark h3,.dark h4,.dark p,.dark span,
+.quiz-intro h2,.quiz-intro p,.quiz-intro .eyebrow,
+.cookie-banner p,.cookie-banner span{color:#111!important;}
+.final-box{box-shadow:none!important;}
+.final-note{border-color:var(--border)!important;color:#4F4F4F!important;}
+.final-cta .btn-outline{background:transparent!important;color:#111!important;border-color:#111!important;}
+.final-cta .btn-outline:hover{background:var(--accent)!important;color:#fff!important;border-color:var(--accent)!important;}
+
+/* Синие акценты */
+.btn,.btn-accent{background:var(--btn-blue)!important;border-color:var(--btn-blue)!important;color:#fff!important;}
+.btn:hover,.btn:focus-visible,.btn-accent:hover{background:var(--btn-blue-hover)!important;border-color:var(--btn-blue-hover)!important;color:#fff!important;}
+.logo .mark,.badge-hot,.cat-card .cat-arrow,.hero-checks li::before,.quick-item .qi-ico,
+.map-full-link,.quiz-progress-fill,.filter-pill.active{
+  background:var(--accent)!important;border-color:var(--accent)!important;color:#fff!important;
+}
+.eyebrow,.text-link:hover,.faq-q .plus,.portfolio-info .cat,.svc-card .svc-num,
+.adv-item .adv-num,.step .num,.quiz-summary-copy-hint{color:var(--accent)!important;}
+.eyebrow::before{background:var(--accent)!important;}
+.quiz-opt:hover,.quiz-opt.selected,.quick-item:hover,.svc-card:hover,.adv-item:hover,.cat-card:hover,
+.dropdown a:hover{background:var(--accent-soft)!important;}
+.quiz-opt:hover,.quiz-opt.selected{border-color:var(--accent)!important;}
+.quiz-intro{background:var(--sand)!important;}
+.quiz-intro .eyebrow,.quiz-intro .eyebrow::before{color:var(--accent)!important;background:var(--accent)!important;}
+
+/* Карточки — светлые, без графита */
+.quick-item,.svc-card,.adv-item,.cat-card,.portfolio-item,.review-card,
+.quiz-opt,.quiz-wrap,.modal-box,.ph,.gallery-item,.step,.review-nav,
+.dropdown,.map-ph,.quiz-summary,.quiz-contact-form input,.quiz-contact-form textarea{
+  background:var(--white)!important;
+  color:#111!important;
+}
+.quiz-wrap,.cat-card,.portfolio-item,.review-card,.gallery-item{box-shadow:none!important;}
+
+/* MAX */
+.btn-max{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:7px!important;
+  min-height:42px!important;
+  padding:10px 16px!important;
+  background:var(--accent)!important;
+  color:#fff!important;
+  border:1px solid var(--accent)!important;
+  border-radius:0!important;
+  font-family:var(--f-mono)!important;
+  font-size:13px!important;
+  font-weight:700!important;
+  letter-spacing:.05em!important;
+  text-transform:uppercase!important;
+  text-decoration:none!important;
+  box-shadow:none!important;
+}
+.btn-max span{color:#fff!important;}
+.btn-max:hover{background:var(--btn-blue-hover)!important;color:#fff!important;border-color:var(--btn-blue-hover)!important;transform:translateY(-1px);}
+.phone-block{gap:4px!important;}
+.phone{color:#111!important;}
+.phone small{color:#4F4F4F!important;}
+
+/* Видео не запускаются сами */
+.stock-video-card,.stock-video,.video-modal-box{border-radius:0!important;}
+.stock-video-card{background:var(--white)!important;}
+.play-badge{background:var(--accent)!important;box-shadow:none!important;}
+.video-modal-overlay{background:rgba(243,235,221,.96)!important;}
+.video-modal-box{background:var(--white)!important;}
+.video-modal-close{background:var(--white)!important;color:#111!important;border-color:#111!important;}
+
+/* Увеличиваем интервалы и предотвращаем налезание текста */
+section{overflow:visible;}
+.wrap{overflow:visible;}
+h1,h2,h3,h4,p,li,a,button,label{overflow-wrap:anywhere;}
+.quick-item,.svc-card,.adv-item,.step,.review-card,.portfolio-info,.cat-label{min-width:0;}
+.quick-item,.svc-card,.adv-item,.step{gap:14px!important;}
+.quiz-question{line-height:1.35!important;margin-bottom:24px!important;}
+.quiz-options{gap:14px!important;}
+.quiz-opt{line-height:1.45!important;min-height:54px!important;}
+.quiz-contact-form{gap:14px!important;margin-top:24px!important;}
+.hero-btns,.final-contact,.header-cta{gap:14px!important;}
+.final-grid{gap:48px!important;}
+.footer-grid{gap:36px!important;}
+.faq-item{padding:20px 0!important;}
+.faq-q{min-height:42px;}
+.faq-a p{padding-top:14px!important;}
+.info-copy p + p{margin-top:20px!important;}
+
+/* Полностью убираем скругления */
+*,*::before,*::after{border-radius:0!important;}
+
+/* На мобильном MAX тоже доступен в меню */
+@media(max-width:760px){
+  .header-cta .btn-max{display:none!important;}
+  .mobile-menu-foot{align-items:stretch!important;}
+  .mobile-menu-foot .btn-max{display:inline-flex!important;width:100%!important;margin-top:10px!important;}
+  .mobile-menu-foot{flex-direction:column!important;}
+  .hero-btns .btn{min-height:50px;}
+  .quick-grid,.cat-grid,.svc-grid,.adv-grid,.video-grid,.portfolio-grid,.review-page{gap:12px!important;}
+  .quick-item,.svc-card,.adv-item,.step,.review-card{padding:18px!important;}
+  .quiz-opt{min-height:48px!important;padding:12px!important;}
+}
+
+/* Tablet/mobile: текстовые колонки не сжимаются */
+@media(max-width:1080px){
+  .hero-grid,.area-grid,.info-grid,.quiz-top{gap:32px!important;}
+}
+</style>
+<script id="max-contact-buttons">
+(function(){
+  var MAX_URL='https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8';
+
+  function makeMaxButton(){
+    var a=document.createElement('a');
+    a.className='btn-max';
+    a.href=MAX_URL;
+    a.target='_blank';
+    a.rel='noopener';
+    a.innerHTML='MAX <span>↗</span>';
+    return a;
+  }
+
+  function addNearPhone(){
+    document.querySelectorAll('.phone-block').forEach(function(block){
+      if(!block.querySelector('.btn-max')) block.appendChild(makeMaxButton());
+    });
+
+    /* В мобильном меню кнопка должна быть видна отдельно от телефона */
+    var foot=document.querySelector('.mobile-menu-foot');
+    if(foot && !foot.querySelector('.btn-max')) foot.appendChild(makeMaxButton());
+
+    /* В футере рядом с номером телефона */
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(phone){
+      var parent=phone.parentElement;
+      if(!parent || parent.querySelector('.btn-max')) return;
+      if(parent.tagName==='LI'){
+        var wrap=document.createElement('span');
+        wrap.style.cssText='display:flex;align-items:center;gap:12px;flex-wrap:wrap;';
+        phone.parentNode.insertBefore(wrap,phone);
+        wrap.appendChild(phone);
+        wrap.appendChild(makeMaxButton());
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded',addNearPhone);
+})();
+</script>
+
+
+<style id="fix-form-visibility">
+/* Fix quiz description visibility and replace graphite form fields with beige */
+.quiz-intro,
+.quiz-intro *,
+.quiz-intro h1,
+.quiz-intro h2,
+.quiz-intro h3,
+.quiz-intro p,
+.quiz-intro .muted,
+.quiz-intro .subtitle {
+  color: #111111 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.quiz-intro {
+  background: #F3EBDD !important;
+  padding: 28px 32px !important;
+  margin-bottom: 24px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.quiz-intro p {
+  display: block !important;
+  line-height: 1.65 !important;
+  margin: 10px 0 0 !important;
+  max-width: 850px !important;
+}
+
+/* All form controls: beige instead of graphite */
+input,
+textarea,
+select,
+.quiz input,
+.quiz textarea,
+.quiz select,
+.quiz-form input,
+.quiz-form textarea,
+.quiz-form select,
+.form input,
+.form textarea,
+.form select,
+.contact-form input,
+.contact-form textarea,
+.contact-form select,
+.calculator input,
+.calculator textarea,
+.calculator select,
+.option,
+.quiz-option,
+.calc-option,
+.choice,
+.choice-card {
+  background: #E9DDC9 !important;
+  background-color: #E9DDC9 !important;
+  color: #111111 !important;
+  border-color: #CDBFA9 !important;
+  box-shadow: none !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #5F574D !important;
+  opacity: 1 !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  background: #F3EBDD !important;
+  color: #111111 !important;
+  border-color: #2F80FF !important;
+  outline: 2px solid rgba(47,128,255,.16) !important;
+  outline-offset: 1px !important;
+}
+
+/* Override dark/graphite field rules with higher specificity */
+.dark input,
+.dark textarea,
+.dark select,
+.quiz-intro input,
+.quiz-intro textarea,
+.quiz-intro select,
+.final-box input,
+.final-box textarea,
+.final-box select,
+section input,
+section textarea,
+section select {
+  background: #E9DDC9 !important;
+  color: #111111 !important;
+  border-color: #CDBFA9 !important;
+}
+
+/* Selected calculator/options remain beige, with blue indication */
+.quiz-option.active,
+.calc-option.active,
+.choice.active,
+.choice-card.active,
+.option.active,
+.quiz-option.selected,
+.calc-option.selected,
+.choice.selected,
+.choice-card.selected,
+.option.selected {
+  background: #E8F2FF !important;
+  color: #111111 !important;
+  border-color: #2F80FF !important;
+}
+</style>
+
+
+<style id="force-quiz-intro-black">
+.quiz-intro,
+.quiz-intro *,
+.quiz-intro h1,
+.quiz-intro h2,
+.quiz-intro h3,
+.quiz-intro p,
+.quiz-intro strong,
+.quiz-intro span {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+</style>
+
+</body>
 </html>
 
 <style id="mobile-final-compact">
