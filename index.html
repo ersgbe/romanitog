@@ -880,76 +880,314 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.svc-num{font-family:'Roboto Condensed','Inter',sans-
 })();
 </script>
 
-
 <style id="beige-blue-theme-override">
-/* === БЕЖЕВЫЙ ФОН + СИНИЕ ЗАГОЛОВКИ === */
+/*
+  ТЕМА: бежевый фон + синий акцент + чёрный текст
+  Этот блок ПОСЛЕДНИЙ в <head> — перекрывает все предыдущие стили
+*/
+
+/* ── 1. Корневые токены ─────────────────────────────────── */
 :root {
-  --sand: #F5F0E8;
-  --sand-deep: #EDE7D8;
-  --graphite: #1a1a1a;
-  --clay: #1a3c6e;
-  --btn-blue: #1a3c6e;
-  --btn-blue-hover: #24509a;
-  --accent: #1a3c6e;
-  --accent-2: #2d5ba8;
-  --accent-soft: #e8eef8;
-  --olive: #3a5a8a;
-  --stone: #555555;
-  --ink-70: #222222;
-  --border: #d8cfc0;
-  --border-strong: #1a3c6e;
-  --white: #FFFDF8;
+  --sand:         #F5F0E8;   /* бежевый фон */
+  --sand-deep:    #EDE8DF;   /* чуть темнее бежевый */
+  --graphite:     #111111;   /* текст — чёрный */
+  --clay:         #1A4A9A;   /* синий тёмный (hover-ссылок) */
+  --btn-blue:     #1A4A9A;   /* синяя кнопка */
+  --btn-blue-hover:#13398A;  /* кнопка при наведении */
+  --accent:       #1A4A9A;   /* акцент — синий */
+  --accent-2:     #5B8DD9;   /* светлый синий (на тёмном фоне) */
+  --accent-soft:  #E8EFFE;   /* светло-синяя подложка */
+  --olive:        #374151;
+  --stone:        #555F6E;
+  --ink-70:       #2D2D2D;
+  --border:       #D8D2C6;
+  --border-strong:#111111;
+  --white:        #FFFFFF;
 }
-body { background: #F5F0E8 !important; color: #1a1a1a !important; }
-h1, h2, h3, h4, h5, h6 { color: #1a3c6e !important; }
-.section-title { color: #1a3c6e !important; }
-.eyebrow { color: #1a3c6e !important; }
-.eyebrow::before { background: #1a3c6e !important; }
-.hero { background: linear-gradient(135deg, #F5F0E8 0%, #EDE7D8 60%, #e8eef8 100%) !important; }
-.quick-item, .svc-card, .adv-item, .cat-card, .review-card, .step, .gallery-item, .portfolio-item {
-  background: #FFFDF8 !important;
+
+/* ── 2. Фон страницы ────────────────────────────────────── */
+body {
+  background: #F5F0E8 !important;
+  color: #111111 !important;
 }
-.quick-item:hover, .svc-card:hover, .adv-item:hover, .step:hover {
-  background: #e8eef8 !important;
+
+/* ── 3. Убираем все GraphITE / Mono-chrome хардкоды ─────── */
+
+/* Фон секций */
+.hero                    { background: #F5F0E8 !important; }
+.hero-grid               { background: transparent !important; }
+footer                   { background: #F5F0E8 !important; color: #555F6E !important; }
+.modal-box               { background: #F5F0E8 !important; }
+.mobile-menu             { background: #F5F0E8 !important; }
+
+/* Белые подложки карточек — оставляем белыми */
+.quick-item, .svc-card, .adv-item, .cat-card,
+.review-card, .faq-item, .step, .portfolio-card,
+.quiz-contact-form,
+.quick-grid, .cat-grid, .svc-grid, .adv-grid,
+.video-grid, .portfolio-grid, .steps-row, .review-page {
+  background: #FFFFFF !important;
 }
-.quick-item .qi-ico { background: #1a3c6e !important; border-color: #1a3c6e !important; }
-.cat-card .cat-arrow { background: #1a3c6e !important; }
-.hero-checks li::before { background: #1a3c6e !important; color: #fff !important; }
-.svc-card .svc-num, .adv-item .adv-num, .step .num { color: #1a3c6e !important; }
-.faq-q .plus { color: #1a3c6e !important; }
-.logo .mark { background: #1a3c6e !important; border-color: #1a3c6e !important; }
-.badge-hot { background: #1a3c6e !important; }
-.filter-pill.active { background: #1a3c6e !important; border-color: #1a3c6e !important; }
-.map-full-link { background: #1a3c6e !important; }
-.map-full-link:hover { background: #24509a !important; }
-.play-badge { background: rgba(26,60,110,.85) !important; }
-.btn-accent { background: #1a3c6e !important; border-color: #1a3c6e !important; }
-.btn-accent:hover { background: #24509a !important; border-color: #24509a !important; }
-.review-card .quote-mark { color: #1a3c6e !important; }
-.review-head .stars { color: #1a3c6e !important; }
-.portfolio-info .cat { color: #1a3c6e !important; }
-.quiz-intro { background: #1a3c6e !important; }
-.final-cta { background: linear-gradient(120deg, #12294d, #1a3c6e) !important; }
-.final-box { background: #0f2040 !important; border-color: #2d5ba8 !important; }
-.proof-tab.active { background: #1a3c6e !important; color: #fff !important; }
-.review-dot.is-active { background: #1a3c6e !important; }
-.review-nav:hover { background: #1a3c6e !important; border-color: #1a3c6e !important; }
-.quiz-opt.selected, .quiz-opt.selected:hover { border-color: #1a3c6e !important; background: #e8eef8 !important; color: #1a1a1a !important; }
-.quiz-opt.selected::after { color: #1a3c6e !important; }
-.quiz-progress-fill { background: #1a3c6e !important; }
-header.solid { background: rgba(245,240,232,.95) !important; }
-.mobile-menu { background: #F5F0E8 !important; }
-footer { background: #EDE7D8 !important; }
-::selection { background: #1a3c6e !important; color: #fff !important; }
-a:hover, a:focus { color: #1a3c6e !important; }
-#quiz .quiz-opt:hover, #quiz .quiz-opt.selected, #quiz .quiz-opt.active,
-#quiz .quiz-opt[aria-pressed="true"] {
-  background: #1a3c6e !important; color: #fff !important; border-color: #1a3c6e !important;
+
+/* Hover карточек — светло-бежевый вместо серого */
+.quick-item:hover          { background: #EDE8DF !important; }
+.svc-card:hover            { background: #EDE8DF !important; }
+.adv-item:hover            { background: #EDE8DF !important; }
+.cat-card:hover            { background: #EDE8DF !important; }
+.dropdown a:hover          { background: #E8EFFE !important; color: #1A4A9A !important; }
+.quiz-opt:hover            { background: #E8EFFE !important; border-color: #1A4A9A !important; }
+.quiz-opt.selected,
+.quiz-opt[aria-pressed="true"],
+.quiz-opt.active           { background: #1A4A9A !important; color: #fff !important; border-color: #1A4A9A !important; }
+
+/* Прогресс-полоска */
+.quiz-progress-fill        { background: #1A4A9A !important; }
+
+/* ── 4. Тёмные блоки — заменяем графит на тёмно-синий ───── */
+.dark                      { background: #112C5E !important; color: #F5F0E8 !important; }
+.final-cta                 { background: linear-gradient(120deg, #0E2248, #1A4A9A) !important; }
+.cookie-banner             { background: #112C5E !important; }
+.quiz-intro                { background: #112C5E !important; color: #F5F0E8 !important; }
+.quiz-intro h2, .quiz-intro p { color: #F5F0E8 !important; }
+.quiz-intro .eyebrow       { color: #5B8DD9 !important; }
+.quiz-intro .eyebrow::before { background: #5B8DD9 !important; }
+.final-box                 { background: rgba(17,44,94,.45) !important; border-color: #2A5AA8 !important; }
+.final-form-kicker         { color: #93B3E4 !important; }
+.final-contact-form label > span { color: #93B3E4 !important; }
+.final-contact-form input,
+.final-contact-form textarea {
+  background: #0E2248 !important;
+  color: #F5F0E8 !important;
+  border-color: #2A5AA8 !important;
 }
+.final-contact-form input::placeholder,
+.final-contact-form textarea::placeholder { color: #6B8CC4 !important; opacity:1 !important; }
+.final-contact-form input:focus,
+.final-contact-form textarea:focus { border-color: #5B8DD9 !important; background: #112C5E !important; }
+.final-form-note           { color: #6B8CC4 !important; }
+.final-note                { color: #6B8CC4 !important; border-color: #2A5AA8 !important; }
+.final-cta .btn-outline    { color: #fff !important; border-color: #2A5AA8 !important; background: transparent !important; }
+.final-cta .btn-outline:hover { background: #fff !important; color: #112C5E !important; border-color: #fff !important; }
+.final-form-head           { border-bottom-color: #2A5AA8 !important; }
+
+/* ── 5. Кнопки — синие везде, единый стиль ──────────────── */
+.btn {
+  background: #1A4A9A !important;
+  color: #fff !important;
+  border-color: #1A4A9A !important;
+}
+.btn:hover, .btn:focus-visible {
+  background: #13398A !important;
+  border-color: #13398A !important;
+  color: #fff !important;
+  box-shadow: 0 10px 24px rgba(26,74,154,.30) !important;
+}
+.btn-accent {
+  background: #1A4A9A !important;
+  border-color: #1A4A9A !important;
+}
+.btn-accent:hover {
+  background: #13398A !important;
+  border-color: #13398A !important;
+}
+
+/* Outline-кнопки на светлом фоне */
+.btn-outline {
+  background: transparent !important;
+  color: #111111 !important;
+  border: 1.5px solid #111111 !important;
+}
+.btn-outline:hover, .btn-outline:focus-visible {
+  background: #111111 !important;
+  color: #fff !important;
+  border-color: #111111 !important;
+}
+
+/* btn-max (header) */
+.btn-max {
+  background: #fff !important;
+  color: #111111 !important;
+  border-color: #111111 !important;
+}
+.btn-max:hover {
+  background: #1A4A9A !important;
+  color: #fff !important;
+  border-color: #1A4A9A !important;
+}
+.btn-max.on-dark {
+  background: transparent !important;
+  color: #fff !important;
+  border-color: rgba(255,255,255,.4) !important;
+}
+.btn-max.on-dark:hover {
+  background: #fff !important;
+  color: #112C5E !important;
+}
+
+/* Кнопка quiz */
+#quiz .btn,
+#quiz .btn:hover,
+#quiz .btn:focus,
+#quiz .btn:active {
+  background: #1A4A9A !important;
+  color: #fff !important;
+  border-color: #1A4A9A !important;
+}
+
+/* Фильтр портфолио */
+.filter-pill         { background: #fff; border: 1px solid #D8D2C6; color: #111111; }
+.filter-pill:hover   { border-color: #1A4A9A; color: #1A4A9A; }
+.filter-pill.active  { background: #1A4A9A !important; border-color: #1A4A9A !important; color: #fff !important; }
+
+/* nav-кнопка (submit form) */
+#quiz .quiz-nav button { color: #111111 !important; }
+#quiz .quiz-nav button:hover { color: #1A4A9A !important; }
+
+/* ── 6. Акцентные элементы ────────────────────────────────── */
+.eyebrow                   { color: #1A4A9A !important; }
+.eyebrow::before           { background: #1A4A9A !important; }
+.dark .eyebrow             { color: #5B8DD9 !important; }
+.dark .eyebrow::before     { background: #5B8DD9 !important; }
+
+nav.main-nav a::after      { background: #1A4A9A !important; }
+a:hover, a:focus           { color: #1A4A9A !important; }
+
+.text-link:hover           { color: #1A4A9A !important; border-color: #1A4A9A !important; }
+.faq-q .plus               { color: #1A4A9A !important; }
+.hero-checks li::before    { background: #1A4A9A !important; border-color: #1A4A9A !important; }
+.quick-item .qi-ico        { background: #1A4A9A !important; border-color: #1A4A9A !important; }
+.cat-card .cat-arrow       { background: #1A4A9A !important; border-color: #1A4A9A !important; }
+.cat-card:hover            { border-top-color: #1A4A9A !important; }
+.logo .mark                { background: #1A4A9A !important; border-color: #1A4A9A !important; color: #fff !important; }
+.badge-hot                 { background: #1A4A9A !important; box-shadow: 0 8px 20px rgba(26,74,154,.30) !important; }
+.play-badge                { background: rgba(26,74,154,.85) !important; box-shadow: 0 8px 20px rgba(26,74,154,.30) !important; }
+.map-full-link             { background: #1A4A9A !important; }
+.map-full-link:hover       { background: #13398A !important; }
+.spec-tag                  { background: #112C5E !important; }
+.scroll-progress           { background: #1A4A9A !important; }
+.back-to-top               { background: #1A4A9A !important; }
+.back-to-top:hover         { background: #13398A !important; }
+
+/* Числовые метки в карточках */
+.svc-card .svc-num,
+.adv-item .adv-num,
+.step .num,
+.portfolio-info .cat        { color: #1A4A9A !important; }
+
+/* ── 7. Форма в quiz (белый фон) ──────────────────────────── */
+#quiz .quiz-opt {
+  background: #F5F0E8 !important;
+  color: #111111 !important;
+  border: 1px solid #D8D2C6 !important;
+}
+#quiz .quiz-contact-form input,
+#quiz .quiz-contact-form textarea {
+  background: #fff !important;
+  color: #111111 !important;
+  border-color: #C8C2B6 !important;
+}
+#quiz .quiz-contact-form .form-note { color: #555F6E !important; }
+#quiz .quiz-contact-form input::placeholder,
+#quiz .quiz-contact-form textarea::placeholder { color: #888 !important; opacity:1 !important; }
+#quiz .quiz-contact-form button { background: #1A4A9A !important; color: #fff !important; border-color: #1A4A9A !important; }
+#quiz .quiz-progress-bar { background: #D8D2C6 !important; }
+
+/* ── 8. Header твёрдый ────────────────────────────────────── */
+header.solid { background: rgba(245,240,232,.94) !important; border-color: #D8D2C6 !important; }
+
+/* ── 9. Selection ─────────────────────────────────────────── */
+::selection { background: #1A4A9A !important; color: #fff !important; }
+:focus-visible { outline-color: #1A4A9A !important; }
+
+/* ── 10. Mobile quiz opts на тёмном: синий вместо графита ─── */
 @media (max-width: 760px) {
-  #quiz .quiz-opt, #quiz .quiz-opt:visited {
-    background: #1a3c6e !important; color: #fff !important; border-color: #1a3c6e !important;
+  #quiz .quiz-opt,
+  #quiz .quiz-opt:visited {
+    background: #1A4A9A !important;
+    color: #fff !important;
+    border-color: #1A4A9A !important;
   }
+  #quiz .quiz-opt:hover,
+  #quiz .quiz-opt.selected,
+  #quiz .quiz-opt.active,
+  #quiz .quiz-opt[aria-pressed="true"] {
+    background: #13398A !important;
+    color: #fff !important;
+    border-color: #13398A !important;
+  }
+}
+
+/* ── 11. Pulse animation — синий ────────────────────────────── */
+.btn-pulse { box-shadow: 0 0 0 0 rgba(26,74,154,.55) !important; animation: pulseBlue 3.2s ease-in-out infinite !important; }
+@keyframes pulseBlue {
+  0%   { box-shadow: 0 0 0 0 rgba(26,74,154,.4); }
+  70%  { box-shadow: 0 0 0 12px rgba(26,74,154,0); }
+  100% { box-shadow: 0 0 0 0 rgba(26,74,154,0); }
+}
+
+/* ── 12. Tilt spotlight — синий ─────────────────────────────── */
+.tilt::before { background: radial-gradient(180px circle at var(--mx) var(--my), rgba(26,74,154,.10), transparent 70%) !important; }
+
+/* ── 13. Контраст текста в тёмных блоках ───────────────────── */
+.final-cta h2,
+.final-cta .lead,
+.final-cta .section-title { color: #F5F0E8 !important; }
+.cookie-inner p { color: #BFD0EE !important; }
+.dark .lead { color: #BFD0EE !important; }
+.dark .muted { color: #7A9CC8 !important; }
+
+/* ── 14. Stat-band ──────────────────────────────────────────── */
+.stat b { color: #111111 !important; }
+
+/* ── 15. Footer ─────────────────────────────────────────────── */
+.footer-grid h4 { color: #111111 !important; }
+.footer-statement { color: #111111 !important; }
+.policy-links button:hover { color: #1A4A9A !important; }
+.modal-close:hover { border-color: #1A4A9A !important; color: #1A4A9A !important; }
+
+/* ── 16. Меню: нормальный отступ между пунктами ─────────────── */
+nav.main-nav ul { gap: clamp(28px, 3vw, 48px) !important; }
+
+/* ── FAQ: восстанавливаем нормальный вид ────────────────────── */
+.faq-item { background: transparent !important; border: none !important; border-bottom: 1px solid var(--border) !important; }
+.faq-q {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+  text-align: left !important;
+  gap: 20px !important;
+  cursor: pointer !important;
+}
+.faq-q .plus { flex-shrink: 0 !important; margin-left: auto !important; }
+
+/* ── 17. Max-ссылка под номером телефона ────────────────────── */
+.phone-block {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 3px !important;
+}
+a.max-link {
+  font-family: var(--f-mono), monospace;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: #1A4A9A !important;
+  text-decoration: none !important;
+  line-height: 1.2;
+  transition: opacity .18s;
+}
+a.max-link:hover { opacity: .7; text-decoration: none !important; transform: none !important; }
+
+/* Скрываем max-link на узких экранах вместе с phone-block */
+@media (max-width: 760px) {
+  .header-cta .phone-block { display: none !important; }
 }
 </style>
 
@@ -981,9 +1219,8 @@ a:hover, a:focus { color: #1a3c6e !important; }
 <div class="header-cta">
 <div class="phone-block">
 <a class="phone" href="tel:+79663892133">+7 966 389 21 33<small>с 7:00 до 23:00</small></a>
+<a class="max-link" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener">Написать на Макс →</a>
 </div>
-
-<a class="btn-max" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener">Написать в Макс</a>
 <button aria-label="Открыть меню" class="menu-trigger" id="menuTrigger"><span></span><span></span></button>
 </div>
 </div>
@@ -1007,8 +1244,7 @@ a:hover, a:focus { color: #1a3c6e !important; }
 </ul>
 <div class="mobile-menu-foot">
 <a class="phone" href="tel:+79663892133" style="align-items:flex-start;">+7 966 389 21 33<small>с 7:00 до 23:00</small></a>
-<a class="btn-max" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener">Написать в Макс</a>
-
+<a class="btn" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener" style="font-size:13px;padding:10px 16px;">Написать на Макс →</a>
 </div>
 </div>
 <div id="top"></div>
@@ -1019,6 +1255,7 @@ a:hover, a:focus { color: #1a3c6e !important; }
 <div class="wrap">
 <div class="hero-grid">
 <div class="hero-copy reveal">
+<span class="eyebrow">Ремонт · Строительство · Отделка</span>
 <h1>Ремонт без лишних переделок и расходов</h1>
 <p class="lead">Не оставляем вас разбираться с ремонтом в одиночку. Осмотрим объект, найдём причину проблемы, составим понятную смету и выполним нужные работы одной бригадой — от отдельного этапа до ремонта объекта целиком.</p>
 <ul class="hero-checks">
@@ -1029,7 +1266,6 @@ a:hover, a:focus { color: #1a3c6e !important; }
 </ul>
 <div class="hero-btns">
 <a class="btn btn-outline btn-lg" href="tel:">Позвонить</a>
-<a class="btn-max" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener">Написать в Макс</a>
 
 </div>
 </div>
@@ -1304,7 +1540,6 @@ a:hover, a:focus { color: #1a3c6e !important; }
 </ul>
 <div class="hero-btns">
 <a class="btn btn-outline" href="tel:+79663892133">Уточнить по телефону</a>
-<a class="btn-max" href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener">Написать в Макс</a>
 
 </div>
 </div>
@@ -1550,7 +1785,7 @@ a:hover, a:focus { color: #1a3c6e !important; }
 <h4>Контакты</h4>
 <ul>
 <li><a href="tel:+79663892133">+7 966 389 21 33 — позвонить</a></li>
-<li></li>
+<li><a href="https://max.ru/u/f9LHodD0cOKMAV_CCj5Nnj_3gqnjIKA7j5QTeL0JzQPmm9q-cjE7iaw-UE8" target="_blank" rel="noopener">Написать на Макс →</a></li>
 <li>Режим работы: 7:00–23:00</li>
 <li>Москва и Московская область</li>
 </ul>
