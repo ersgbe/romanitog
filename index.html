@@ -2679,12 +2679,10 @@ section select {
 <script id="custom-fixes-quiz-step2-cols">
 /* Правка 2: принудительно 2 колонки на шаге 2 квиза (применяется после renderDetails) */
 (function(){
-  var orig = window._quizRenderDetailsPatch;
   function patchStep2Grid(){
     var el = document.getElementById('quizDetailOptions');
     if(el) el.style.gridTemplateColumns = 'repeat(2,1fr)';
   }
-  // Перехватываем любые изменения quizDetailOptions через MutationObserver
   document.addEventListener('DOMContentLoaded', function(){
     var container = document.getElementById('quizDetailOptions');
     if(!container) return;
@@ -2692,6 +2690,56 @@ section select {
     var mo = new MutationObserver(patchStep2Grid);
     mo.observe(container, {childList: true});
   });
+})();
+</script>
+
+<!-- Попап для отзывов на мобильных -->
+<div id="reviewPopup" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);padding:16px;align-items:flex-end;justify-content:center;">
+  <div id="reviewPopupBox" style="background:#fff;width:100%;max-width:520px;border-radius:12px 12px 0 0;padding:24px 20px 32px;max-height:85vh;overflow-y:auto;position:relative;">
+    <button id="reviewPopupClose" type="button" style="position:absolute;top:14px;right:14px;background:none;border:none;font-size:24px;cursor:pointer;line-height:1;color:#555;">×</button>
+    <div id="reviewPopupQuote" style="font-size:32px;color:#2F80FF;line-height:1;margin-bottom:8px;">"</div>
+    <p id="reviewPopupText" style="font-size:16px;line-height:1.65;color:#171717;margin:0 0 18px;"></p>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div>
+        <div id="reviewPopupName" style="font-weight:600;font-size:15px;"></div>
+        <div id="reviewPopupStars" style="color:#2F80FF;font-size:13px;">★★★★★</div>
+      </div>
+      <div id="reviewPopupMeta" style="margin-left:auto;font-size:12px;color:#888;font-family:monospace;text-transform:uppercase;letter-spacing:.03em;"></div>
+    </div>
+  </div>
+</div>
+
+<script id="review-popup-mobile">
+(function(){
+  var popup = document.getElementById('reviewPopup');
+  var closeBtn = document.getElementById('reviewPopupClose');
+  var textEl = document.getElementById('reviewPopupText');
+  var nameEl = document.getElementById('reviewPopupName');
+  var metaEl = document.getElementById('reviewPopupMeta');
+
+  function isMobile(){ return window.innerWidth <= 760; }
+
+  function openPopup(card){
+    textEl.textContent = card.querySelector('.review-text').textContent;
+    nameEl.textContent = card.querySelector('.review-name').textContent;
+    metaEl.textContent = card.querySelector('.review-meta').textContent;
+    popup.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closePopup(){
+    popup.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', function(e){
+    if(!isMobile()) return;
+    var card = e.target.closest('.review-card');
+    if(card){ openPopup(card); return; }
+  });
+
+  closeBtn.addEventListener('click', closePopup);
+  popup.addEventListener('click', function(e){ if(e.target === popup) closePopup(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closePopup(); });
 })();
 </script>
 
